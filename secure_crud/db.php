@@ -15,7 +15,6 @@ $options = [
 
 try{
     $pdo = new PDO($dsn, $user, $pass);
-    echo "Database Connected $dsn";
     
 }
 catch(\PDOException $e){

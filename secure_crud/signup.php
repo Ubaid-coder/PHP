@@ -1,3 +1,10 @@
+<?php 
+require_once "csrf.php";
+$token = generateToken();
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,24 +25,30 @@
                 <p class="text-sm text-gray-500 mt-2">Join us and start your 14-day free trial.</p>
             </div>
 
-            <form action="#" class="space-y-4">
+            <form action="create_user.php" class="space-y-4" method="post">
+                <input id="token" type="hidden" name="csrf_token" value="<?= $token ?>" >
                 <div>
                     <label class="block text-sm font-medium text-gray-700">Full Name</label>
-                    <input type="text" placeholder="John Doe"
-                        class="w-full px-4 py-2 mt-1 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none transition">
+                    <input 
+                    value="ubaid"
+                    name="name" 
+                    type="text" 
+                    placeholder="John Doe"
+                    class="w-full px-4 py-2 mt-1 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none transition">
                 </div>
 
                 <div>
                     <label class="block text-sm font-medium text-gray-700">Email Address</label>
                     <input 
+                    name="email"
                     type="email" 
-                    placeholder="example@gmail.com"
+                    value="ubaid@gmail.com"
                     class="w-full px-4 py-2 mt-1 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none transition">
                 </div>
 
                 <div>
                     <label class="block text-sm font-medium text-gray-700">Password</label>
-                    <input type="password" placeholder="••••••••"
+                    <input name="password" type="password" value="123"
                         class="w-full px-4 py-2 mt-1 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none transition">
                 </div>
 

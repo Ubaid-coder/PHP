@@ -139,7 +139,7 @@
             The page you're looking for has drifted off into the cosmos. 
             Let's get you back to familiar territory.
         </p>
-        <a href="/" class="btn-home">Return Home</a>
+        <a href="/my_php" class="btn-home">Return Home</a>
     </div>
 
     <script>
